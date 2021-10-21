@@ -62,7 +62,7 @@ class Chatbot:
         not_know.close()
 
         # Atributo para ensinar bot, iniciada com S
-        self.ensinar = "S"
+        self.ensinar = ''
 
         # Atributos em array para o bot entender quando o usuario está se despedindo
         self.lista_despedida = ['Tchau', 'TCHAU', 'tchau', 'Adeus', 'ADEUS', 'adeus', 'Bye', 'BYE', 'bye']
@@ -95,20 +95,27 @@ class Chatbot:
                     resp = 3
                 if resp < 1:
                     resp = 1
-                lista_secur_people = ['fechado', '1', '2', '3']
+                lista_secur_people = ['fechado', '--S3NH4--', '--NULL--', '--NULL--', '--NULL--']
 
-                for c in range(1, resp):
+                for c in range(2, resp+1):
                     print('>> ', end="")
-                    printf.print_color('Nome e Sobrenome da pessoas (Ex. Fabio Silva): ', 'yellow_end')
+                    printf.print_color('Nome e Sobrenome da pessoas (Ex. Fabio Lucas): ', 'yellow_end')
                     lista_secur_people[c] = input().capitalize()
+                print('>> ', end="")
 
-                memoria_security.write('["' + lista_secur_people[0] + '","' + lista_secur_people[1] + '","' + lista_secur_people[2] + '","' + lista_secur_people[3] + '"]')
+                while lista_secur_people[1] != confirm:
+                    printf.print_color('Digite a senha esses usuário deverão escrever para editar o bot: ', 'yellow_end')
+                    lista_secur_people[1] = input().capitalize()
+                    printf.print_color('Confirme a senha acima: ','yellow_end')
+                    confirm = input().capitalize()
+
+                memoria_security.write('["' + lista_secur_people[0] + '","' + lista_secur_people[1] + '","' + lista_secur_people[2] + '","' + lista_secur_people[3] + '","' + lista_secur_people[4] + '"]')
                 memoria_security.close()
                 memoria_security = open('bots_files/' + self.name_bot_trat + '/' + self.name_bot_trat + '_frases_prontas/' + self.name_bot_trat + '_security.json', 'r')
                 print('>> ', end="")
-                printf.print_color('NOMES LIBERADOS PARA EDIÇÃO: ' + lista_secur_people[1] + '", "' + lista_secur_people[2] + '", "' + lista_secur_people[3], 'yellow')
+                printf.print_color('NOMES LIBERADOS PARA EDIÇÃO: ' + lista_secur_people[2] + '", "' + lista_secur_people[3] + '", "' + lista_secur_people[4], 'yellow')
                 print('>> ', end="")
-                printf.print_color('SENHA PARA ENSINAR O BOT: ************', 'yellow')
+                printf.print_color('SENHA PARA ENSINAR O BOT: ' + lista_secur_people[1], 'yellow')
             printf.print_color('------------------------------------------------------------------------', 'yellow')
         # Array salva os nomes de segurança e configs
         self.security = json.load(memoria_security)
@@ -136,6 +143,37 @@ class Chatbot:
         # Salvando a informações como atributo do bot
         self.bots_info = json.load(bots_info)
         bots_info.close()
+
+        # Tenta encontrar o aquivo com as frases do bot para ele dizer se reconhece user
+        try:
+            bots_cumprimento = open('bots_files/' + self.name_bot_trat + '/' + self.name_bot_trat + '_frases_prontas/' + self.name_bot_trat + '_cumprimento.json','r')
+        except FileNotFoundError:
+            # Caso nao ache esse arquivo especifico de info de bot, ele criado e posto para leitura
+            bots_cumprimento = open('bots_files/' + self.name_bot_trat + '/' + self.name_bot_trat + '_frases_prontas/' + self.name_bot_trat + '_cumprimento.json','w')
+            lista_cumprimento = ['0', '1', '2', '3', '4', '5']
+            # Loop para pedir ao user as 3 possiveis formas do bot se cumprimentar
+            printf.print_color('\n------------ 3 frases de cumprimento caso o bot conheça o usuário ------------', 'yellow')
+            for c in range(3):
+                print('>> ', end="")
+                printf.print_color(str(c + 1) + '° cumprimento caso o bot conhaça o usuário (Ex."Prazer em te ver denovo"): ', 'yellow_end')
+                resp = input().capitalize()
+                lista_cumprimento[c] = resp
+            printf.print_color('--------------------------------------------------------------------------------', 'yellow')
+            # Loop para pedir ao user as 3 possiveis formas do bot se cumprimentar
+            printf.print_color('\n------------ 3 frases de cumprimento caso o bot NÃO conheça o usuário ------------','yellow')
+            for c in range(3):
+                print('>> ', end="")
+                printf.print_color(str(c + 1) + '° cumprimento caso o bot NÃO conhaça o usuário (Ex."Prazer em te conhecer"): ', 'yellow_end')
+                resp = input().capitalize()
+                lista_cumprimento[c+3] = resp
+            printf.print_color('--------------------------------------------------------------------------------','yellow')
+            # escrevendo as frases no arquivo
+            bots_cumprimento.write('["' + lista_cumprimento[0] + '","' + lista_cumprimento[1] + '","' + lista_cumprimento[2] + '","' + lista_cumprimento[3] + '","' + lista_cumprimento[4] + '","' + lista_cumprimento[5] + '"]')
+            bots_cumprimento.close()
+            bots_cumprimento = open('bots_files/' + self.name_bot_trat + '/' + self.name_bot_trat + '_frases_prontas/' + self.name_bot_trat + '_cumprimento.json','r')
+        # Salvando a frases como atributo do bot
+        self.cumprimento = json.load(bots_cumprimento)
+        bots_cumprimento.close()
 
         # Abre ou cria arquivo de frases do bot depois fecha(so para garantir que exite)
         try:
@@ -475,14 +513,31 @@ class Chatbot:
         nome_completo = nome + ' ' + sobrenome
 
         # Pergunta se quer ensinar o bot, caso possa
-        if self.security[0] == 'livre' or nome_completo == self.security[1] or nome_completo == self.security[2] or nome_completo == self.security[3]:
-            printf.print_color('QUER ENSINAR O BOT SEMPRE NA CONVERSA [S/N]: ', 'yellow_end')
-            ensinar = input()
-            if ensinar[0:1].upper() in self.lista_nao or ensinar[0:2].upper() in self.lista_na:
-                ensinar = 'N'
+        if self.security[0] == 'livre' or nome_completo == self.security[2] or nome_completo == self.security[3] or nome_completo == self.security[4]:
+            while self.ensinar == '':
+                printf.print_color('QUER ENSINAR O BOT SEMPRE NA CONVERSA [S/N]: ', 'yellow_end')
+                self.ensinar = input()
+
+            if self.ensinar[0:1].upper() in self.lista_nao or self.ensinar[0:2].upper() in self.lista_nao or self.ensinar[0:3].upper() in self.lista_nao:
+                self.ensinar = 'N'
+            elif self.ensinar[0:1].upper() in self.lista_sim or self.ensinar[0:2].upper() in self.lista_sim or self.ensinar[0:3].upper() in self.lista_nao:
+                if self.security[0] == 'livre':
+                    self.ensinar = 'S'
+                else:
+                    senha = ''
+                    while self.senha == '':
+                        printf.print_color('DIGITE A SENHA DE EDIÇÃO DESSE BOT: ', 'yellow_end')
+                        senha = input().upper()
+                    if senha == self.security[1]:
+                        self.ensinar = 'S'
+                        printf.print_color('\n[SENHA CORRETA]\n\n', 'green')
+                    else:
+                        self.ensinar = 'N'
+                        printf.print_color('\n[SENHA INCORRETA]\n', 'red')
             else:
-                ensinar = 'S'
-            self.ensinar = ensinar
+                self.ensinar = 'N'
+        else:
+            self.ensinar = 'N'
 
         ficha.fechamento()
 
@@ -490,9 +545,11 @@ class Chatbot:
         self.fala(self.bots_info[escolha])
 
         if nome_completo in self.conhecidos:
-            self.fala('Fico feliz em te ver denovo ' + nome_completo)
+            escolha = random.randint(0, 2)
+            self.fala(self.cumprimento[escolha] + nome)
         else:
-            self.fala('Muito prazer ' + nome_completo)
+            escolha = random.randint(3, 5)
+            self.fala(self.cumprimento[escolha] + nome_completo)
 
             self.conhecidos.append(nome_completo)
             memoria_conhecidos = open('bots_files/' + self.name_bot_trat + '/' + self.name_bot_trat + '_aprendizado/' + self.name_bot_trat + '_conhecidos.json', 'w')
@@ -655,30 +712,33 @@ class Chatbot:
                 return self.no_resp[escolha]
 
         #No ultimo caso, pedi par user ensinar o bot a responder e add no .json caso não N em ensinar
+        escolha = random.randint(0, 4)
         printf.print_color(self.name_bot + ': ', 'purple')
-        printf.print_color('Não entendi oque voce disse', 'blue')
+        printf.print_color(self.no_resp[escolha], 'blue')
         while True:
-            printf.print_color(self.name_bot + ': ', 'purple')
-            printf.print_color('Quer me ensinar a responder isso?', 'blue_end')
-            s_or_n = input('[S/N]')
+            print('\n>> ', end='')
+            printf.print_color('QUER ENSINAR O BOT A RESPONDER ISSO [S/N]: ', 'yellow_end')
+            s_or_n = input()
             if s_or_n[0].upper() in self.lista_nao or s_or_n[0:1].upper() in self.lista_nao or s_or_n[0:2].upper() in self.lista_nao:
                 s_or_n = 'N'
             elif s_or_n[0].upper() in self.lista_sim or s_or_n[0:1].upper() in self.lista_sim or s_or_n[0:2].upper() in self.lista_sim:
                 s_or_n = 'S'
             else:
-                escolha = random.randint(0, 4)
-                printf.print_color(self.no_resp[escolha], 'blue')
                 s_or_n = 'N'
             if s_or_n is 'N':
                 # Abre arquivo txt para escrever oq o bot não soube respoder
                 not_know = open('bots_files/' + self.name_bot_trat + '/' + self.name_bot_trat + '_frases_prontas/' + self.name_bot_trat + '_not_know.txt', 'a')
                 not_know.write(' -> ' + frase_original + '\n')
                 not_know.close()
-                break
+                print()
+                return '...'
             if s_or_n is 'S':
                 self.learn(frase)
-                return 'Hmmm, vamos continuar então'
-            return 'Tente outra coisa então.'
+                print()
+                printf.print_color('[APRENDIDO]\n', 'green')
+                print()
+                return '...'
+            return '...'
 
     # Função onde o bot fala com o user
     def fala(self, frase):

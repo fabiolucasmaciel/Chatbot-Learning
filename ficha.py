@@ -10,14 +10,18 @@ def abertura():
 
 
 def nome():
-    printf.print_color('PRIMEIRO NOME: ', 'yellow_end')
-    nome = input().capitalize().strip()
+    nome = ''
+    while nome == '':
+        printf.print_color('PRIMEIRO NOME: ', 'yellow_end')
+        nome = input().capitalize().strip()
     return nome
 
 
 def sobrenome():
-    printf.print_color('SOBRENOME: ', 'yellow_end')
-    sobrenome = input().capitalize().strip()
+    sobrenome = ''
+    while sobrenome == '':
+        printf.print_color('SOBRENOME: ', 'yellow_end')
+        sobrenome = input().capitalize().strip()
     return sobrenome
 
 def fechamento():
