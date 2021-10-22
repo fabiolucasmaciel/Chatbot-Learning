@@ -492,18 +492,20 @@ class Chatbot:
             if self.security[0] == 'livre' or nome_completo == self.security[1] or nome_completo == self.security[2] or nome_completo == self.security[3]:
                 key = menu.command_learn()
                 self.learn(key)
-                return 'Então vamos continuar a conversa.'
+                return '...'
             else:
                 return 'Acho que você não tem autorizção para editar esse bot.'
 
         # Comando usado para pedir ajuda nos comandos e infos
         elif frase == '~HELP':
             menu.command_help()
-            return 'Esses são os camndos atuais'
+            print()
+            return '...'
         # Caso o comando não seja entendido
         else:
             menu.command_erro()
-            return 'Vamos continuar de onde paramos então.'
+            print()
+            return '...'
 
     def ficha(self):
         # Mostra uma ficha simples para user no inicio
@@ -543,13 +545,14 @@ class Chatbot:
 
         escolha = random.randint(0, 3)
         self.fala(self.bots_info[escolha])
+        print()
 
         if nome_completo in self.conhecidos:
             escolha = random.randint(0, 2)
-            self.fala(self.cumprimento[escolha] + nome)
+            self.fala(self.cumprimento[escolha] + ' ' + nome)
         else:
             escolha = random.randint(3, 5)
-            self.fala(self.cumprimento[escolha] + nome_completo)
+            self.fala(self.cumprimento[escolha] + ' ' + nome_completo)
 
             self.conhecidos.append(nome_completo)
             memoria_conhecidos = open('bots_files/' + self.name_bot_trat + '/' + self.name_bot_trat + '_aprendizado/' + self.name_bot_trat + '_conhecidos.json', 'w')

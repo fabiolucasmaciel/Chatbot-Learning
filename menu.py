@@ -9,14 +9,14 @@ def command_learn():
 
 
 def command_help():
-    printf.print_color('-' * 22, 'yellow_end')
+    printf.print_color('-' * 25, 'yellow_end')
     printf.print_color(' HELP ', 'yellow_end')
-    printf.print_color('-' * 22, 'yellow')
+    printf.print_color('-' * 25, 'yellow')
 
     printf.print_color(' ~learn : Usado para ensinar o bot a responder coisa. ', 'yellow')
     printf.print_color(' ~help : Usado para ver os comandos disponiveis. ', 'yellow')
 
-    printf.print_color('-' * 50, 'yellow')
+    printf.print_color('-' * 56, 'yellow')
 
 
 def command_erro():
