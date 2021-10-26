@@ -26,14 +26,32 @@ Um projeto de chatbot simples, de linha de comando em python, que é ensinado a 
  
 |  Código | Explicação  |
 |---|---|
-|![lib](https://github.com/paulovitornovaes/project_threads/blob/9a4c6c73fe0b4307746f37d7526cab76f47109b9/part_1/assets/library_part1.png)|<ul> <li>Bibliotecas necessárias. </li></ul> |
+|![lib](https://github.com/fabiolucasmaciel/Chatbot-Learning/blob/main/assets/main/imprte_var.png)|<ul> <li>Bibliotecas necessárias. </li></ul> |
+|  |  |
+|![lib](https://github.com/fabiolucasmaciel/Chatbot-Learning/blob/main/assets/main/bot_nome.png)|<ul> <li>Bibliotecas necessárias. </li></ul> |
+|  |  |
+|![lib](https://github.com/fabiolucasmaciel/Chatbot-Learning/blob/main/assets/main/bot_ini.png)|<ul> <li>Bibliotecas necessárias. </li></ul> |
+|  |  |
+|![lib](https://github.com/fabiolucasmaciel/Chatbot-Learning/blob/main/assets/main/loop_bot.png)|<ul> <li>Bibliotecas necessárias. </li></ul> |
 |  |  |
 
 ## Classe Chatbot e init
  
 |  Código | Explicação  |
 |---|---|
-|![lib](https://github.com/paulovitornovaes/project_threads/blob/9a4c6c73fe0b4307746f37d7526cab76f47109b9/part_1/assets/library_part1.png)|<ul> <li>Bibliotecas necessárias. </li></ul> |
+|![lib](https://github.com/fabiolucasmaciel/Chatbot-Learning/blob/main/assets/classe%20chatbot/imports.png)|<ul> <li>Bibliotecas necessárias. </li></ul> |
+|  |  |
+|![lib](https://github.com/fabiolucasmaciel/Chatbot-Learning/blob/main/assets/classe%20chatbot/classe_init.png)|<ul> <li>Bibliotecas necessárias. </li></ul> |
+|  |  |
+|![lib](https://github.com/fabiolucasmaciel/Chatbot-Learning/blob/main/assets/classe%20chatbot/novo_bot_if.png)|<ul> <li>Bibliotecas necessárias. </li></ul> |
+|  |  |
+|![lib](https://github.com/fabiolucasmaciel/Chatbot-Learning/blob/main/assets/classe%20chatbot/dir_if.png)|<ul> <li>Bibliotecas necessárias. </li></ul> |
+|  |  |
+|![lib](https://github.com/fabiolucasmaciel/Chatbot-Learning/blob/main/assets/classe%20chatbot/dir_if_frases.png)|<ul> <li>Bibliotecas necessárias. </li></ul> |
+|  |  |
+|![lib](https://github.com/fabiolucasmaciel/Chatbot-Learning/blob/main/assets/classe%20chatbot/conhecidos.png)|<ul> <li>Bibliotecas necessárias. </li></ul> |
+|  |  |
+|![lib](https://github.com/fabiolucasmaciel/Chatbot-Learning/blob/main/assets/classe%20chatbot/not_know_var_listas.png)|<ul> <li>Bibliotecas necessárias. </li></ul> |
 |  |  |
 
 ## Aprendizagem
