@@ -1,12 +1,12 @@
 #Incluindo a classe Chatbot do arquivo chatbot.py
 from chatbot import Chatbot
-
 #Incluindo aquivo com edições de prints coloridos
 from printf import print_color
-
-#Nomeando e inciando o bot (outro nome gera outro novo)
+#Iniciando var strings com vazias
 novo = ''
 nome = ''
+
+#Nomeando e inciando o bot (outro nome gera outro novo)
 while novo == '':
     print_color('\nVOCÊ DESEJA CRIAR UM BOT NOVO E ENSINÁ-LO DO INICIO? [S/N]: ', 'yellow_end')
     novo = input()

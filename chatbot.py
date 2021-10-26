@@ -12,7 +12,6 @@ import sys
 
 # Classe que defina o chatbot
 class Chatbot:
-
     def __init__(self, name, novo):
         # Nome do bot é salvo com e sem tratamento
         self.name_bot = name
@@ -21,7 +20,6 @@ class Chatbot:
         # Atributos em array para o bot entender quando é sim e não mais facilmente
         self.lista_sim = ['Sim', 'SIM', 's', 'S', 'YES', 'yes', 'Y', 'y', 'SI', 'si', 'sim', 'SiM', 'siM', 'sIm', 'Yes']
         self.lista_nao = ['Nao', 'NAO', 'n', 'N', 'NO', 'no', 'NÃO', 'Não', 'não', 'nao', 'NaO', 'naO', 'nAo', 'NãO','nãO', 'nÃo']
-
         if novo[0] in self.lista_nao or novo[0:2] in self.lista_nao or novo[0:3] in self.lista_nao:
             self.novo_bot = 'N'
         elif novo[0] in self.lista_sim or novo[0:2] in self.lista_sim or novo[0:3] in self.lista_sim:
@@ -60,13 +58,10 @@ class Chatbot:
         # Abre arquivo txt para escrever oq o bot não soube respoder
         not_know = open('bots_files/' + self.name_bot_trat + '/' + self.name_bot_trat + '_aprendizado/' + self.name_bot_trat + '_not_know.txt','a')
         not_know.close()
-
         # Atributo para ensinar bot, iniciada com S
         self.ensinar = ''
-
         # Atributos em array para o bot entender quando o usuario está se despedindo
         self.lista_despedida = ['Tchau', 'TCHAU', 'tchau', 'Adeus', 'ADEUS', 'adeus', 'Bye', 'BYE', 'bye']
-
         # Para salvar ultimas frases ditas ao bot e responder
         self.ultimas_frases = ['0', '1', '2']
 
