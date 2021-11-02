@@ -26,32 +26,32 @@ Um projeto de chatbot simples, de linha de comando em python, que é ensinado a 
  
 |  Código | Explicação  |
 |---|---|
-|![lib](https://github.com/fabiolucasmaciel/Chatbot-Learning/blob/main/assets/main/imprte_var.png)|<ul> <li>Bibliotecas necessárias. </li></ul> |
+|![imports](https://github.com/fabiolucasmaciel/Chatbot-Learning/blob/main/assets/main/imprte_var.png)|<ul> <li>Bibliotecas necessárias e declaração de variáveis. </li></ul> |
 |  |  |
-|![lib](https://github.com/fabiolucasmaciel/Chatbot-Learning/blob/main/assets/main/bot_nome.png)|<ul> <li>Bibliotecas necessárias. </li></ul> |
+|![botname](https://github.com/fabiolucasmaciel/Chatbot-Learning/blob/main/assets/main/bot_nome.png)|<ul> <li>Recebe o nome do bot. </li></ul> |
 |  |  |
-|![lib](https://github.com/fabiolucasmaciel/Chatbot-Learning/blob/main/assets/main/bot_ini.png)|<ul> <li>Bibliotecas necessárias. </li></ul> |
+|![botini](https://github.com/fabiolucasmaciel/Chatbot-Learning/blob/main/assets/main/bot_ini.png)|<ul> <li>Inicia a classe bot com as info recebidas. </li></ul> |
 |  |  |
-|![lib](https://github.com/fabiolucasmaciel/Chatbot-Learning/blob/main/assets/main/loop_bot.png)|<ul> <li>Bibliotecas necessárias. </li></ul> |
+|![loopbot](https://github.com/fabiolucasmaciel/Chatbot-Learning/blob/main/assets/main/loop_bot.png)|<ul> <li>Loop de chat com bot. </li></ul> |
 |  |  |
 
 ## Classe Chatbot e init
  
 |  Código | Explicação  |
 |---|---|
-|![lib](https://github.com/fabiolucasmaciel/Chatbot-Learning/blob/main/assets/classe%20chatbot/imports.png)|<ul> <li>Bibliotecas necessárias. </li></ul> |
+|![imports](https://github.com/fabiolucasmaciel/Chatbot-Learning/blob/main/assets/classe%20chatbot/imports.png)|<ul> <li>Bibliotecas necessárias. </li></ul> |
 |  |  |
-|![lib](https://github.com/fabiolucasmaciel/Chatbot-Learning/blob/main/assets/classe%20chatbot/classe_init.png)|<ul> <li>Bibliotecas necessárias. </li></ul> |
+|![init](https://github.com/fabiolucasmaciel/Chatbot-Learning/blob/main/assets/classe%20chatbot/classe_init.png)|<ul> <li>classe do bot e seu init. </li></ul> |
 |  |  |
-|![lib](https://github.com/fabiolucasmaciel/Chatbot-Learning/blob/main/assets/classe%20chatbot/novo_bot_if.png)|<ul> <li>Bibliotecas necessárias. </li></ul> |
+|![novobot](https://github.com/fabiolucasmaciel/Chatbot-Learning/blob/main/assets/classe%20chatbot/novo_bot_if.png)|<ul> <li>Cria bot caso seja novo. </li></ul> |
 |  |  |
-|![lib](https://github.com/fabiolucasmaciel/Chatbot-Learning/blob/main/assets/classe%20chatbot/dir_if.png)|<ul> <li>Bibliotecas necessárias. </li></ul> |
+|![direc](https://github.com/fabiolucasmaciel/Chatbot-Learning/blob/main/assets/classe%20chatbot/dir_if.png)|<ul> <li>Confere existencia de diretorios. </li></ul> |
 |  |  |
-|![lib](https://github.com/fabiolucasmaciel/Chatbot-Learning/blob/main/assets/classe%20chatbot/dir_if_frases.png)|<ul> <li>Bibliotecas necessárias. </li></ul> |
+|![dirfrases](https://github.com/fabiolucasmaciel/Chatbot-Learning/blob/main/assets/classe%20chatbot/dir_if_frases.png)|<ul> <li>Confere existencia de arquivos com frases. </li></ul> |
 |  |  |
-|![lib](https://github.com/fabiolucasmaciel/Chatbot-Learning/blob/main/assets/classe%20chatbot/conhecidos.png)|<ul> <li>Bibliotecas necessárias. </li></ul> |
+|![conheci](https://github.com/fabiolucasmaciel/Chatbot-Learning/blob/main/assets/classe%20chatbot/conhecidos.png)|<ul> <li>Puxa arquiva de conhecidas ou cria ele. </li></ul> |
 |  |  |
-|![lib](https://github.com/fabiolucasmaciel/Chatbot-Learning/blob/main/assets/classe%20chatbot/not_know_var_listas.png)|<ul> <li>Bibliotecas necessárias. </li></ul> |
+|![naosabe](https://github.com/fabiolucasmaciel/Chatbot-Learning/blob/main/assets/classe%20chatbot/not_know_var_listas.png)|<ul> <li>Exemplo de como são os arquivos de frases do bot. </li></ul> |
 |  |  |
 
 ## Aprendizagem
